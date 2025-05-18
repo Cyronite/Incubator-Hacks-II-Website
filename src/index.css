@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Modak&display=swap');
+@tailwind utilities;
+
+.special-button {
+  width: 7rem;     
+  text-colour:FFF6C3;           /* smaller width (was 10rem) */
+  height: 2.75rem;            /* smaller height (was 4rem) */
+  border-radius: 0.375rem;    /* rounded-md instead of lg */
+  cursor: pointer;
+  user-select: none;
+  background: #FFF6C3;
+  transition: all 150ms ease-in-out;
+  border-bottom: 1px solid #f9c74f;
+  box-shadow: 0 2px 0 0 #f1b722, 0 4px 0 0 #FFB300 ; /* smaller shadow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f9c74f;
+  font-weight: 700;
+  font-size: 20px;        /* smaller font (14px) */
+  text-decoration: none;
+  padding: 0 0.75rem;         /* horizontal padding for content spacing */
+}
+
+/* Active state */
+.special-button:active {
+  transform: translateY(0.15rem); /* smaller translate on active */
+  box-shadow: 0 0 0 0 #f1b722, 0 0 0 0 #f9c74f70;
+  border-bottom-width: 0;
+}
+
+
+  .inter {
+    font-family: 'Inter';
+  }
+.modak {
+  font-family: 'Modak';
+}

@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Modak&display=swap');
 @tailwind utilities;
 
+body {
+  font-family: 'Roboto', 'Inter', 'Modak', sans-serif;
+}
+
 .special-button {
   width: 7rem;               /* smaller width (was 10rem) */
   height: 2.75rem;            /* smaller height (was 4rem) */
@@ -28,10 +32,21 @@
   border-bottom-width: 0;
 }
 
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
 
 .inter {
   font-family: 'Inter';
 }
-.modak {
+@font-face {
   font-family: 'Modak';
+  src: url('../Modak/Modak-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.modak {
+  font-family: 'Modak', cursive, sans-serif;
 }

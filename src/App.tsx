@@ -29,19 +29,19 @@ function App() {
         </div>
       </section>
 
-      {/* Sponsors Section */}
-      <section className="bg-[#ffeb9c] py-12 px-6 md:px-24">
+      {/* Vector Divider - Adjusted margins */}
+      <div className="w-full flex justify-center items-center mt-8 mb-0">  {/* Changed from my-8 */}
+        <img src="src/assets/Vector (2).png" alt="Divider" className="w-40 md:w-64 h-auto" />
+      </div>
+
+      {/* Sponsors Section - Adjusted padding */}
+      <section className="bg-[#ffeb9c] pt-0 pb-12 px-6 md:px-24">  {/* Changed from py-12 */}
         <h2 className="modak text-6xl md:text-7xl text-[#242424] text-center mb-12">Our Sponsors</h2>
         <div className="grid grid-cols-2 gap-8 justify-items-center">
           <img src="src/assets/youthcreativityfund.png" alt="Youth Creativity Fund" className="w-24 h-auto object-contain bg-white rounded-xl shadow-md p-1" />
           <img src="src/assets/kitchenercity.png" alt="City of Kitchener" className="w-24 h-auto object-contain bg-white rounded-xl shadow-md p-1" />
         </div>
       </section>
-
-      {/* Vector Divider */}
-      <div className="w-full flex justify-center items-center my-8">
-        <img src="src/assets/Vector (2).png" alt="Divider" className="w-40 md:w-64 h-auto" />
-      </div>
     </>
   )
 }

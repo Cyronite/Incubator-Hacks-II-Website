@@ -1,5 +1,5 @@
 import Nav from './components/Nav'
-import Hero from './components/hero'
+import Hero from './components/Hero'
 import Circle from './components/BgCircle'
 import './App.css';
 
@@ -12,7 +12,7 @@ function App() {
       <Circle top="-1500px" left="100px" size="2000px" color='#E5E50180'/>
       <Circle top="500px" left="-500px" size="1500px" color='#685FD479'/> 
       <Nav />
-      {/* <Hero /> */}
+      <Hero />
     </>
   )
 }

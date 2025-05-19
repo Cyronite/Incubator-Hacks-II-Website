@@ -1,4 +1,5 @@
-body,html{
+body, html {
   margin: 0;
-  background-image: url('https://img.freepik.com/free-photo/blue-mountains-famous-tourism-scenery-lijiang_1417-1143.jpg');
+  height: 100vh;
+
 }

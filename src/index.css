@@ -2,8 +2,7 @@
 @tailwind utilities;
 
 .special-button {
-  width: 7rem;     
-  text-colour:FFF6C3;           /* smaller width (was 10rem) */
+  width: 7rem;               /* smaller width (was 10rem) */
   height: 2.75rem;            /* smaller height (was 4rem) */
   border-radius: 0.375rem;    /* rounded-md instead of lg */
   cursor: pointer;
@@ -30,9 +29,9 @@
 }
 
 
-  .inter {
-    font-family: 'Inter';
-  }
+.inter {
+  font-family: 'Inter';
+}
 .modak {
   font-family: 'Modak';
 }

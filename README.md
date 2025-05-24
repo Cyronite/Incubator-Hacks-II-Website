@@ -1,54 +1,77 @@
-# React + TypeScript + Vite
+# Incubator Hacks Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the official website for Incubator Hacks!
 
-Currently, two official plugins are available:
+Incubator Hacks is a dynamic 2-day tech conference designed for newcomers to dive into cutting-edge technologies, craft innovative project pitches, and compete for post-event mentorship. Participants collaborate to develop solutions using niche tools, with winning teams securing hands-on guidance from industry-experienced mentors to bring their ideas to life after the event.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Modern React + TypeScript + Vite stack
+- Responsive landing page and about section
+- Sponsor and team sections
+- Custom SVG logo and branding
+- Tailwind CSS for rapid styling
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
+- Node.js (v18 or newer recommended)
+- npm or yarn
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Installation
+1. Clone this repository:
+   ```sh
+   git clone <your-repo-url>
+   cd Incubator-Hacks-II-Website
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+
+### Development
+To start the development server with hot reloading:
+```sh
+npm run dev
+# or
+yarn dev
+```
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Building for Production
+To build the site for production:
+```sh
+npm run build
+# or
+yarn build
+```
+The output will be in the `dist/` folder.
+
+### Linting
+To check for lint errors:
+```sh
+npm run lint
+# or
+yarn lint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project Structure
+- `src/` — Main source code
+  - `App.tsx` — Main application file
+  - `components/` — Reusable React components
+  - `assets/` — Images and SVGs
+  - `index.css` — Global and Tailwind styles
+- `public/` — Static files (if used)
+- `index.html` — Main HTML template
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Customization
+- Update event details, images, and sponsor logos in the `src/assets/` folder.
+- Edit content in `App.tsx` and components as needed.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## License
+This project is open source and available under the MIT License.
+
+---
+
+Made with ❤️ from Incubator Hacks Organizer Team

@@ -1,16 +1,17 @@
-import './Sponsor.css';
+import React from 'react';
+import '../Sponsor.css';
 
-const Sponsor = () => {
+const Sponsor: React.FC = () => {
   return (
-    <section className="bg-[#ffeb9c] pt-24 pb-12 px-6 md:px-24">
-      <h2 className="modak text-6xl md:text-7xl text-[#242424] text-center mb-16">Our Sponsors</h2>
-      <div className="flex flex-col md:flex-row gap-16 justify-center items-center">
-        <div className="sponsor-logo-container">
-          <img src="src/assets/kitchenercity.png" alt="City of Kitchener" className="sponsor-logo-img" />
-        </div>
-        <div className="sponsor-logo-container">
-          <img src="src/assets/youthcreativityfund.png" alt="Youth Creativity Fund" className="sponsor-logo-img" />
-        </div>
+    <section className="sponsor-section">
+      <h2 className="sponsor-title modak">OUR SPONSORS</h2>
+      <div className="sponsor-logos">
+        <a className="sponsor-logo" href="https://youthcreativityfund.ca" target="_blank" rel="noopener noreferrer">
+          <img src="src/assets/Group 134.jpg" alt="Youth Creativity Fund Logo" style={{ width: '350px', height: '200px' }} />
+        </a>
+        <a className="sponsor-logo" href="https://www.kitchener.ca/en/taxes-utilities-and-finance/bloomberg-youth-climate-action-fund.aspx" target="_blank" rel="noopener noreferrer">
+          <img src="src/assets/Group 135 (1).jpg" alt="Kitchener Logo" style={{ width: '350px', height: '200px' }} />
+        </a>
       </div>
     </section>
   );

@@ -3,17 +3,33 @@
 import { useState, useEffect, useRef } from "react";
 import sharon from "../assets/sharon.png";
 import teambackground from "../assets/teambackground.png";
+
 const teamMembers = [
-  { name: "Sharon Basovich", image: sharon },
-  { name: "Prasun", image: sharon },
-  { name: "Elisha", image: sharon },
-  { name: "Sathvik", image: sharon },
-  // add as many as you like
+  {
+    name: "Sharon Basovich",
+    image: sharon,
+    socialLink: "https://linkedin.com/in/sharon-basovich",
+  },
+  {
+    name: "Prasun",
+    image: sharon,
+    socialLink: "https://linkedin.com/in/prasun",
+  },
+  {
+    name: "Elisha",
+    image: sharon,
+    socialLink: "https://linkedin.com/in/elisha",
+  },
+  {
+    name: "Sathvik",
+    image: sharon,
+    socialLink: "https://linkedin.com/in/sathvik",
+  },
 ];
 
 export default function MeetOurTeam() {
   const [isPaused, setIsPaused] = useState(false);
-
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   return (
     <>
       <h2 className="modak text-6xl md:text-7xl text-[#242424] text-center mb-12">
@@ -36,18 +52,23 @@ export default function MeetOurTeam() {
               animationPlayState: isPaused ? "paused" : "running",
             }}
           >
-            {/* Render enough copies to ensure seamless scrolling */}
             {Array(4)
               .fill(teamMembers)
               .flat()
               .map((member, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-40 flex flex-col items-center cursor-pointer"
-                  onMouseEnter={() => setIsPaused(true)}
-                  onMouseLeave={() => setIsPaused(false)}
+                  className="flex-shrink-0 w-40 flex flex-col items-center cursor-pointer relative"
+                  onMouseEnter={() => {
+                    setIsPaused(true);
+                    setHoveredIndex(index);
+                  }}
+                  onMouseLeave={() => {
+                    setIsPaused(false);
+                    setHoveredIndex(null);
+                  }}
                 >
-                  <div className="w-45 h-60 overflow-hidden">
+                  <div className="w-45 h-60 overflow-hidden relative">
                     <img
                       src={member.image}
                       alt={member.name}
@@ -57,10 +78,27 @@ export default function MeetOurTeam() {
                         display: "block",
                       }}
                     />
+                    <div
+                      className={`absolute inset-0 flex items-end justify-center transition-opacity duration-300 pb-4 ${
+                        hoveredIndex === index ? "opacity-50" : "opacity-0"
+                      }`}
+                    >
+                      <div className="bg-white bg-opacity-95 rounded-full w-37 h-37 flex flex-col items-center justify-center shadow-lg">
+                        <p className="text-[#242424] text-sm font-semibold mb-2 text-center px-3">
+                          {member.name}
+                        </p>
+                        <a
+                          href={member.socialLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-800 underline transition-colors duration-200 text-xs"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          View Profile
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-lg font-semibold mt-4 text-[#242424]">
-                    {member.name}
-                  </p>
                 </div>
               ))}
           </div>

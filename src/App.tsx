@@ -3,7 +3,7 @@ import Circle from "./components/BgCircle";
 import "./App.css";
 import logo from "./assets/IncubatorHacksLogo.svg";
 import HeroImage from "./assets/HeroImage.png";
-import MeetOurTeam2 from "./components/MeetOurTeam2";
+import MeetOurTeam from "./components/MeetOurTeam";
 
 import Faq from "./components/Faq";
 
@@ -101,7 +101,7 @@ function App() {
       </div>
 
       <section className="mt-20">
-        <MeetOurTeam2></MeetOurTeam2>
+        <MeetOurTeam/>
       </section>
     </>
   );

@@ -1,7 +1,7 @@
 import Nav from "./components/Nav";
 import Circle from "./components/BgCircle";
 import "./App.css";
-import logo from "./assets/IncubatorHacksLogo.svg";
+import polaroid from "./assets/polaroid.png";
 import HeroImage from "./assets/HeroImage.png";
 import MeetOurTeam from "./components/MeetOurTeam";
 import Sponsor from "./Sponsor";
@@ -37,17 +37,16 @@ function App() {
             </p>
           </div>
           {/* Logo on the right */}
-          <div className="flex-shrink-0 flex justify-center items-center w-full md:w-auto mb-8 md:mb-0 md:ml-8">
+          <div className="flex-shrink-0 flex justify-center items-center w-full md:w-auto mb-8 md:mb-0 md:ml-8" style={{ marginTop: '-40px' }}>
             <img
-              src={logo}
-              alt="Incubator Hacks Logo"
-              className="w-40 md:w-56 h-auto object-contain bg-white p-6 rounded-xl"
-              style={{ maxWidth: '220px' }}
+              src={polaroid}
+              alt="Incubator Hacks Polaroid"
+              // className="w-40 md:w-56 h-auto object-contain bg-white p-6 rounded-xl"
+              style={{ maxWidth: '400px' }}
             />
           </div>
         </div>
       </section>
-
 
       {/* Sponsors Section - Use Sponsor component */}
       <Sponsor />

@@ -8,7 +8,7 @@ export default function hero() {
         <div className="p-[5%] flex justify-between max-w-[1600px] mx-auto w-full max-lg:flex-col-reverse">
             <div id="Left" className=" mt-10 lg:mt-52">
                 <div id="top">
-                    <div className="modak text-[#333333] text-7xl max-lg:text-center">Incubator Hacks</div>
+                    <div className="modak text-[#333333] text-7xl max-lg:text-center max-[400px]:text-6xl">Incubator Hacks</div>
                     <div className="inter text-[#333333] text-2xl mb-[20px] max-w-[650px] max-lg:text-center max-lg:w-full max-lg:mx-auto">A 2-day long hackathon for complete beginners to explore technology and build a project. Winning project pitches receive technical guidance from mentors to continue developing their ideas after the event.</div>
                     <div className="max-lg:mx-auto max-lg:text-center">
                         <a href="#apply" className="bg-[#333333] text-[30px] no-underline w-[180px] px-[30px] py-[10px] inter border-[#333333] text-[white]  rounded-full border-4 text-center">Register Now</a>

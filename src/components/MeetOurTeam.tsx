@@ -1,100 +1,87 @@
-"use client";
-
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
-import sharon from "../assets/sharon.jpg";
+import { FaLinkedin } from "react-icons/fa";
 
-const teamMembers = [
-  { name: "Sharon Basovich", image: sharon },
-  { name: "Prasun", image: "../assets/sharon.jpg" },
-  { name: "Elisha", image: "/images/jamie.jpg" },
-  { name: "Sathvik", image: "/images/chris.jpg" },
-  // add as many as you like
-];
+type TeamMember = {
+  name: string;
+  image: string;
+  linkedin: string;
+};
 
-export default function MeetOurTeam() {
-  const [isPaused, setIsPaused] = useState(false);
+type TeamDepartment = {
+  name: string;
+  members: TeamMember[];
+};
 
-  // Reference to one full set container to measure width dynamically
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const [scrollWidth, setScrollWidth] = useState(0);
+type MeetOurTeamProps = {
+  departments: TeamDepartment[];
+};
+
+export default function MeetOurTeam({ departments }: MeetOurTeamProps) {
+  const [x, setX] = useState(0);
 
   useEffect(() => {
-    if (containerRef.current) {
-      // Width of one full set of members
-      setScrollWidth(containerRef.current.scrollWidth);
-    }
+    const interval = setInterval(() => {
+      setX((prev) => prev - 1);
+    }, 20);
+    return () => clearInterval(interval);
   }, []);
 
+  const repeatedDepartments = [...departments, ...departments];
+
   return (
-    <section className="max-w-6xl mx-auto border-4 border-black rounded-3xl px-0 py-6">
-      <h2 className="modak text-6xl md:text-7xl text-[#242424] text-center mb-12">
+    <div className="relative bg-[#FFFBEA] py-24 overflow-hidden">
+      <h2 className="text-5xl font-bold text-center text-[#4B3F72] mb-20">
         Meet Our Team
       </h2>
 
-      <div className="overflow-hidden w-full relative">
+      <div className="relative h-[360px] w-full overflow-hidden">
         <motion.div
-          className="flex gap-8 whitespace-nowrap"
-          animate={{
-            x: isPaused ? 0 : -scrollWidth,
-          }}
-          transition={{
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "linear",
-            duration: 20,
-          }}
-          style={{ cursor: "grab" }}
+          animate={{ x }}
+          transition={{ ease: "linear", duration: 0 }}
+          style={{ display: "flex", width: "max-content" }}
+          className="absolute gap-16"
         >
-          {/* Duplicate the array twice for smooth scrolling */}
-          {[...teamMembers, ...teamMembers].map((member, index) => (
+          {repeatedDepartments.map((department, idx) => (
             <div
-              key={index}
-              className="flex-shrink-0 w-40 flex flex-col items-center cursor-pointer"
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
+              key={idx}
+              className="relative bg-[#E2B07F] rounded-[12px] min-w-[350px] h-[250px] px-6 pt-6 pb-12 shadow-lg border-4 border-[#A05A2C] flex flex-col items-center"
             >
-              <div className="w-40 h-40 rounded-full overflow-hidden shadow-lg">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-40 h-40 rounded-full object-cover border-4 border-[#242424]"
-                  style={{ objectFit: "cover" }}
-                />
+              {/* Wagon shape */}
+              <div className="absolute -bottom-8 left-6 w-12 h-12 bg-[#A05A2C] rounded-full border-[6px] border-[#703C1C]"></div>
+              <div className="absolute -bottom-8 right-6 w-12 h-12 bg-[#A05A2C] rounded-full border-[6px] border-[#703C1C]"></div>
+
+              <h3 className="text-xl font-semibold text-white mb-4">
+                {department.name}
+              </h3>
+              <div className="flex flex-wrap justify-center gap-6">
+                {department.members.map((member, i) => (
+                  <div key={i} className="w-20 flex flex-col items-center">
+                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-yellow-300">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="text-xs mt-1 text-center font-medium text-white">
+                      {member.name}
+                    </div>
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white mt-1 hover:text-yellow-300"
+                    >
+                      <FaLinkedin />
+                    </a>
+                  </div>
+                ))}
               </div>
-              <p className="text-lg font-semibold mt-4 text-[#242424]">
-                {member.name}
-              </p>
             </div>
           ))}
         </motion.div>
-
-        {/* Hidden div to measure width of one set */}
-        <div
-          ref={containerRef}
-          className="flex gap-8 whitespace-nowrap absolute top-0 left-0 opacity-0 pointer-events-none select-none"
-          style={{ width: "max-content" }}
-        >
-          {teamMembers.map((member, idx) => (
-            <div
-              key={`measure-${idx}`}
-              className="flex-shrink-0 w-40 flex flex-col items-center"
-            >
-              <div className="w-40 h-40 rounded-full overflow-hidden shadow-lg">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-40 h-40 rounded-full object-cover border-4 border-[#242424]"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <p className="text-lg font-semibold mt-4 text-[#242424]">
-                {member.name}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
-    </section>
+    </div>
   );
 }

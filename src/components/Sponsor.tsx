@@ -12,12 +12,12 @@ const Sponsor: React.FC = () => {
         <a className="sponsor-logo" href="https://www.kitchener.ca/en/taxes-utilities-and-finance/bloomberg-youth-climate-action-fund.aspx" target="_blank" rel="noopener noreferrer">
           <img src="src/assets/Group 135 (1).jpg" alt="Kitchener Logo" style={{ width: '350px', height: '200px' }} />
         </a>
-        <a className="sponsor-logo" href="https://ocean.org" target="_blank" rel="noopener noreferrer">
-          <img src="src/assets/image.png" alt="New Sponsor Logo" style={{ width: '350px', height: '200px' }} />
+        <a className="sponsor-logo" href="https://ocean.org/" target="_blank" rel="noopener noreferrer">
+          <img src="src/assets/oceanwise.png" alt="Ocean Wise Logo" style={{ width: '350px', height: '200px' }} />
         </a>
       </div>
     </section>
   );
 };
 
-export default Sponsor;
+export default Sponsor; 

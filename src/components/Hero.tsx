@@ -1,7 +1,12 @@
 "../assets/HeroImage.png"
-import star from "../assets/star.png"
 import HeroImage from "../assets/HeroImage.png";
-export default function hero() {
+import Hero from "./components/Hero";
+import PolaroidSlider from "./components/About";
+import Sponsor from "./components/Sponsor";
+import FAQ from "./components/FAQ";
+import MeetOurTeam from "./components/MeetOurTeam";
+
+export default function Hero() {
 
     return (
         <>
@@ -17,15 +22,12 @@ export default function hero() {
                 <div id="bottom" className="flex gap-10 mt-28 max-[1430px]:mt-40 absolute max-[1300px]:hidden">
                     <div id="box1" className="p-5 w-60 bg-[#ffffff3e] rounded-[20px] backdrop-blur-[3px] shadow-lg border-2 border-[white]">
                         
-                        <img src={star} alt="" />
                         <div className=" pt-[15px] inter text-[#333333] text-lg">Tech conferences where participants build innovative hardware/software projects and present them to judges for prizes.</div>
                     </div>
                     <div id="box2" className=" -mt-10 mb-10 p-5 w-60 bg-[#ffffff3e] rounded-[20px] backdrop-blur-[3px] shadow-lg border-2 border-[white]">
-                        <img src={star} alt="" />
                         <div className=" pt-[15px] inter text-[#333333] text-lg">Tech conferences where participants build innovative hardware/software projects and present them to judges for prizes.</div>
                     </div>
                     <div id="box3" className="p-5 w-60 bg-[#ffffff3e] rounded-[20px] backdrop-blur-[3px] shadow-lg border-2 border-[white]">
-                        <img src={star} alt="" />
                         <div className=" pt-[15px] inter text-[#333333] text-lg ">Tech conferences where participants build innovative hardware/software projects and present them to judges for prizes.</div>
                     </div>
                 </div>
@@ -37,15 +39,12 @@ export default function hero() {
         <div className="flex justify-center mt-10">
             <div className="flex gap-10 min-[1300px]:hidden max-[800px]:flex-wrap max-[800px]:justify-center">
                 <div id="box1" className="p-5 w-60 bg-[#ffffff3e] rounded-[20px] backdrop-blur-[3px] shadow-lg border-2 border-[white]">
-                        <img src={star} alt="" />
                         <div className=" pt-[15px] inter text-[#333333] text-lg">Tech conferences where participants build innovative hardware/software projects and present them to judges for prizes.</div>
                     </div>
                     <div id="box2" className=" min-[800px]:-mt-10 min-[800px]:mb-10 p-5 w-60 bg-[#ffffff3e] rounded-[20px] backdrop-blur-[3px] shadow-lg border-2 border-[white]">
-                        <img src={star} alt="" />
                         <div className=" pt-[15px] inter text-[#333333] text-lg">Tech conferences where participants build innovative hardware/software projects and present them to judges for prizes.</div>
                     </div>
                     <div id="box3" className="p-5 w-60 bg-[#ffffff3e] rounded-[20px] backdrop-blur-[3px] shadow-lg border-2 border-[white]">
-                        <img src={star} alt="" />
                         <div className=" pt-[15px] inter text-[#333333] text-lg">Tech conferences where participants build innovative hardware/software projects and present them to judges for prizes.</div>
                     </div>
             </div>

@@ -121,15 +121,23 @@
     .about-content-group {
         flex-direction: column;
         gap: 40px;
+        padding: 0 20px; /* Add horizontal padding */
     }
 
     .about-description {
-        max-width: 80%;
+        max-width: 100%; /* Allow description to use more width */
         text-align: center;
+        padding: 0 10px;
     }
 
     .about-image-carousel {
-        max-width: 80%;
+        max-width: 500px; /* Set a fixed max-width for tablets to prevent excessive shrinking */
+        margin: 0 auto; /* Center the carousel */
+    }
+
+    .polaroid-frame {
+        transform: rotate(2deg); /* Reduce rotation for tablet view */
+        max-width: 100%;
     }
 }
 
@@ -144,6 +152,15 @@
 
     .about-description {
         font-size: 16px;
+    }
+
+    .polaroid-frame {
+        transform: rotate(0deg); /* Remove rotation completely for mobile */
+        padding: 10px; /* Adjust padding for smaller frames */
+    }
+
+    .about-image-carousel {
+        max-width: 95%; /* Further increase for small mobiles */
     }
 
     .carousel-arrow {
@@ -168,5 +185,8 @@
         font-size: 18px;
         width: 35px;
         height: 35px;
+    }
+    .polaroid-frame {
+        padding: 8px;
     }
 } 

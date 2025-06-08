@@ -6,6 +6,9 @@ import PolaroidSlider from "./components/About";
 import Sponsor from "./components/Sponsor";
 import FAQ from "./components/FAQ";
 import MeetOurTeam from "./components/MeetOurTeam";
+import divider from './assets/divider.png';
+import boat from './assets/boat.png';
+
 function App() {
   return (
     <>
@@ -29,6 +32,10 @@ function App() {
           </div>
         </div>
       </section>
+      <div className="relative">
+        <img src={divider} alt="Divider" className="divider-image" />
+        <img src={boat} alt="Boat" className="boat-image" />
+      </div>
       <Sponsor />
       <section className="bg-[#ffeb9c]">
         <section className="py-16 px-4 max-w-6xl mx-auto">

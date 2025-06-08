@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import '../About.css';
 import coleads from '../assets/coleads.JPG';
 import working from '../assets/working.JPG';
@@ -16,11 +16,6 @@ const PolaroidSlider = () => {
         setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
 
-    useEffect(() => {
-        const interval = setInterval(nextImage, 3000); // Change image every 3 seconds
-        return () => clearInterval(interval);
-    }, []);
-
     return (
         <div className="about-image-carousel">
             <button className="carousel-arrow left-arrow" onClick={prevImage}>&lt;</button>
@@ -32,4 +27,5 @@ const PolaroidSlider = () => {
         </div>
     )
 }
+
 export default PolaroidSlider

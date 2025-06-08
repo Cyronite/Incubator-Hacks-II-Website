@@ -257,3 +257,34 @@ body {
   }
 }
 
+.divider-image {
+    width: 100%;
+    display: block;
+    margin-top: 50px; /* Adjust this value as needed to create the desired overlap */
+    position: relative; /* To allow z-index to work */
+    z-index: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-50%) rotate(5deg);
+    }
+    100% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+}
+
+.boat-image {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 700px;
+    height: auto;
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
+}
+

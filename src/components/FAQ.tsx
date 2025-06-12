@@ -17,12 +17,10 @@ function Faq() {
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
             <AccordionTrigger className="inter text-xl text-[#222]">
-              Who can participate?
+              Who can join?
             </AccordionTrigger>
             <AccordionContent className="inter text-[#222] text-lg">
-              This hackathon is open to all high school students — no coding
-              experience necessary! Whether you’re a total beginner or have
-              built projects before, you’re welcome here.
+              Any high school student! You don't need any experience — just an interest in the environment, tech, or trying something new.
             </AccordionContent>
           </AccordionItem>
 
@@ -31,20 +29,16 @@ function Faq() {
               Is it really free?
             </AccordionTrigger>
             <AccordionContent className="inter text-[#222] text-lg">
-              Yes! Participation, workshops, mentorship, and swag are all
-              completely free thanks to our generous sponsors and community
-              partners.
+              Yes! Thanks to our community partners and sponsors, everything from food to mentorship to swag is covered.
             </AccordionContent>
           </AccordionItem>
 
           <AccordionItem value="item-3">
             <AccordionTrigger className="inter text-xl text-[#222]">
-              Do I need to have a team?
+              Do I need a team?
             </AccordionTrigger>
             <AccordionContent className="inter text-[#222] text-lg">
-              Not at all. You can register solo, and we’ll help match you with
-              other participants during our team formation session. Or, you can
-              sign up with your friends!
+              Nope. You can register solo and we'll help you form a team at the event. Or sign up with your friends if you already have one!
             </AccordionContent>
           </AccordionItem>
 
@@ -53,9 +47,7 @@ function Faq() {
               What if I've never coded before?
             </AccordionTrigger>
             <AccordionContent className="inter text-[#222] text-lg">
-              Perfect — this event is designed for beginners! We’ll have intro
-              workshops, mentors to support you, and plenty of beginner-friendly
-              project ideas.
+              That's totally fine, in fact, this hackathon is made for people like you. You'll have access to beginner-friendly resources, mentors, and starter ideas focused on climate action.
             </AccordionContent>
           </AccordionItem>
 
@@ -64,9 +56,7 @@ function Faq() {
               What should I bring?
             </AccordionTrigger>
             <AccordionContent className="inter text-[#222] text-lg">
-              Bring a laptop if you have one, a charger, and your creativity! If
-              you don’t have a laptop, let us know in advance — we might be able
-              to provide one for you.
+              A laptop and charger if you've got one. If you don't, let us know when you apply we'll do our best to help.
             </AccordionContent>
           </AccordionItem>
 
@@ -75,8 +65,7 @@ function Faq() {
               How do I register?
             </AccordionTrigger>
             <AccordionContent className="inter text-[#222] text-lg">
-              Just head over to our Registration page and fill out the quick
-              form. Spots are limited, so don’t wait!
+              Just head over to our Registration page and fill out the quick form. Spots are limited, so don't wait!
             </AccordionContent>
           </AccordionItem>
         </Accordion>

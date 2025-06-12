@@ -20,8 +20,9 @@ const About = () => {
       <div className="p-[5%] mt-[5%] flex justify-between max-w-[1600px] mx-auto w-full max-lg:flex-col pt-32">
         <div id="Left" className="flex-1 min-w-0">
           <div className="modak text-[#333333] text-7xl max-lg:text-center max-[400px]:text-6xl">About Incubator Hacks</div>
-          <div className="inter text-[#333333] text-2xl mb-[20px] max-w-[650px] max-lg:max-w-full max-lg:text-center max-lg:mx-auto">
-            A 2-day long hackathon for complete beginners to explore technology and build a project. Winning project pitches receive technical guidance from mentors to continue developing their ideas after the event.
+          <div className="inter text-[#333333] text-2xl mt-[25px] mb-[75px] max-w-[650px] max-lg:max-w-full max-lg:text-center max-lg:mx-auto ">
+Incubator Hacks is a climate-focused hackathon for high school students — and no, you don’t need to be a cracked coder to join.We started this event in Kitchener-Waterloo to bring something new to the local community: a space where students could tackle real environmental problems, supported by people who care about the future of our planet.
+
           </div>
         </div>
         

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import coleads from '../assets/coleads.JPG';
 import working from '../assets/working.JPG';
 import workshop from '../assets/workshop.png';

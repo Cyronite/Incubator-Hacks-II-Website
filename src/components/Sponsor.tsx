@@ -1,8 +1,15 @@
 import React from 'react';
 import '../Sponsor.css';
+import divider from '../assets/divider.png';
+import boat from '../assets/boat.png';
 
 const Sponsor: React.FC = () => {
   return (
+    <>
+    <div className="relative">
+        <img src={divider} alt="Divider" className="divider-image" />
+        <img src={boat} alt="boat" className="boat-image" />
+      </div>
     <section className="sponsor-section">
       <h2 className="modak text-5xl md:text-6xl text-[#222] mb-8 text-center w-full">OUR SPONSORS</h2>
       <div className="sponsor-logos">
@@ -17,6 +24,7 @@ const Sponsor: React.FC = () => {
         </a>
       </div>
     </section>
+    </>
   );
 };
 

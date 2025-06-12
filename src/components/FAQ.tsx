@@ -7,7 +7,9 @@ import {
 
 function Faq() {
   return (
-    <>
+    <> <section className="bg-[#ffeb9c]">
+        <section className="py-16 px-4 max-w-6xl mx-auto">
+          
       <h2 className="modak text-6xl md:text-7xl text-[#242424] text-center mb-12">
         FAQ
       </h2>
@@ -79,6 +81,9 @@ function Faq() {
           </AccordionItem>
         </Accordion>
       </div>
+      
+      </section>
+      </section>
     </>
   );
 }

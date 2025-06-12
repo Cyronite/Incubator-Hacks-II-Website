@@ -279,36 +279,36 @@ body {
 
 .boat-image {
     position: absolute;
-    right: 0;
+    right: 200px;
     top: 50%;
     transform: translateY(-50%);
-    width: 700px;
+    width: 300px;
     height: auto;
     z-index: 2;
     animation: float 3s ease-in-out infinite;
 }
 
 /* Responsive adjustments for boat image */
-@media (max-width: 1024px) {
+@media (max-width: 1300px) {
     .boat-image {
-        width: 500px; /* Adjust size for tablets */
-        right: -50px; /* Move it slightly to the right to stay on the curve */
+        width: 200px; /* Adjust size for tablets */
+        right: 50px; /* Move it slightly to the right to stay on the curve */
     }
 }
 
 @media (max-width: 768px) {
     .boat-image {
-        width: 350px; /* Adjust size for smaller tablets/large phones */
-        right: -80px; /* Further adjust to keep it off the text */
-        top: 60%; /* Adjust vertical position if needed */
+        width: 200px; /* Adjust size for smaller tablets/large phones */
+        right: 20px; /* Further adjust to keep it off the text */
+        top: -20px; /* Adjust vertical position if needed */
     }
 }
 
 @media (max-width: 480px) {
     .boat-image {
-        width: 250px; /* Adjust size for mobile phones */
-        right: -100px; /* Keep it further right to avoid text */
-        top: 70%; /* Adjust vertical position to stay on the curve */
+        width: 150px; /* Adjust size for mobile phones */
+        right: 20px; /* Keep it further right to avoid text */
+        top: -10px; /* Adjust vertical position to stay on the curve */
     }
 }
 

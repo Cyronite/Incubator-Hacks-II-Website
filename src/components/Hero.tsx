@@ -1,10 +1,6 @@
 "../assets/HeroImage.png"
 import HeroImage from "../assets/HeroImage.png";
-import Hero from "./components/Hero";
-import PolaroidSlider from "./components/About";
-import Sponsor from "./components/Sponsor";
-import FAQ from "./components/FAQ";
-import MeetOurTeam from "./components/MeetOurTeam";
+
 
 export default function Hero() {
 

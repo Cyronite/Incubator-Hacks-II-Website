@@ -6,8 +6,8 @@ export default function Nav() {
   const [active, setActive] = useState(false);
 
   return (
-    <>
-      <nav className="flex justify-between items-center px-[25px] lg:px-[100px] py-[10px] bg-[white]/10 backdrop-blur-[3px] shadow-lg relative z-50">
+    <div className="sticky top-0 z-50">
+      <nav className="flex justify-between items-center px-[25px] lg:px-[100px] py-[10px] bg-[white]/10 backdrop-blur-[3px] shadow-lg relative z-50 ">
         <div id="leftside" className="flex gap-[10px] items-center">
           <img src={logo} alt="Logo" className="h-[60px] w-[60px] lg:h-[100px] lg:w-[100px]" />
           <h1 className="inter text-[18px] lg:text-[25px] text-[#f9c74f] font-bold">Incubator Hacks</h1>
@@ -89,6 +89,7 @@ export default function Nav() {
           </div>
         </motion.div>
       </MotionConfig>
-    </>
+    </div>
   );
 }
+   

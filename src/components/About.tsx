@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import coleads from '../assets/coleads.JPG';
-import working from '../assets/working.JPG';
+import coleads from '../assets/coleads.png';
+import working from '../assets/working.png';
 import workshop from '../assets/workshop.png';
 
 const About = () => {

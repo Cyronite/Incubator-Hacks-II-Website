@@ -1,87 +1,151 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { FaLinkedin } from "react-icons/fa";
+import cartImg from "../assets/cart.png";
+import wheelImg from "../assets/wheel.png";
 
-type TeamMember = {
-  name: string;
-  image: string;
-  linkedin: string;
-};
+const teamMembers = [
+	{ name: "Alice", role: "Designer", img: "/pfp1.jpg" },
+	{ name: "Bob", role: "Developer", img: "/pfp2.jpg" },
+	{ name: "Charlie", role: "Product Manager", img: "/pfp3.jpg" },
+	{ name: "Dana", role: "QA Engineer", img: "/pfp4.jpg" },
+	{ name: "Eli", role: "DevOps", img: "/pfp5.jpg" },
+	{ name: "Fiona", role: "UX Researcher", img: "/pfp6.jpg" },
+	{ name: "George", role: "Scrum Master", img: "/pfp7.jpg" },
+	{ name: "Hannah", role: "Engineer", img: "/pfp8.jpg" },
+	{ name: "Ian", role: "Analyst", img: "/pfp9.jpg" },
+	{ name: "Jill", role: "Content Strategist", img: "/pfp10.jpg" },
+];
 
-type TeamDepartment = {
-  name: string;
-  members: TeamMember[];
-};
+const WAGON_WIDTH = 260; // cart + margins
 
-type MeetOurTeamProps = {
-  departments: TeamDepartment[];
-};
+export default function MeetOurTeam() {
+	const [visibleWagons, setVisibleWagons] = useState(10);
+	const [paused, setPaused] = useState(false);
 
-export default function MeetOurTeam({ departments }: MeetOurTeamProps) {
-  const [x, setX] = useState(0);
+	useEffect(() => {
+		const screenWidth = window.innerWidth;
+		const wagonsPerRow = Math.ceil((screenWidth * 2) / WAGON_WIDTH);
+		setVisibleWagons(wagonsPerRow);
+	}, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setX((prev) => prev - 1);
-    }, 20);
-    return () => clearInterval(interval);
-  }, []);
+	const allWagons = Array.from({ length: visibleWagons }, (_, i) => {
+		const group = teamMembers.slice(i * 3, i * 3 + 3);
+		if (group.length < 3) {
+			group.push(...teamMembers.slice(0, 3 - group.length));
+		}
 
-  const repeatedDepartments = [...departments, ...departments];
+		return (
+			<div
+				key={i}
+				className="relative flex flex-col items-center w-[340px] h-[200px] justify-end mx-8"
+			>
+				{/* Profile Circles on top */}
+				<div className="flex w-full justify-between px-10 mb-[-36px]">
+					{group.map((member, j) => (
+						<div
+							key={j}
+							className="relative group flex flex-col items-center"
+						>
+							<img
+								src={member.img}
+								alt={member.name}
+								className="h-28 w-20 object-cover border-2 border-white"
+								style={{
+									borderRadius: "60% 60% 50% 50% / 80% 80% 60% 60%",
+								}}
+							/>
+							<div className="absolute top-[-2.5rem] left-1/2 z-20 w-max -translate-x-1/2 scale-0 transform whitespace-nowrap rounded bg-black px-2 py-1 text-xs text-white opacity-0 shadow-md transition-all duration-200 group-hover:scale-100 group-hover:opacity-100">
+								<div className="font-bold">{member.name}</div>
+								<div>{member.role}</div>
+							</div>
+						</div>
+					))}
+				</div>
+				{/* Cart Image below */}
+				<div className="relative w-full flex justify-center items-end group/wagon">
+					<img
+						src={cartImg}
+						alt="Cart"
+						className="w-[400px] h-auto z-0"
+						style={{ objectFit: "contain" }}
+					/>
+					{/* Wheels */}
+					<img
+						src={wheelImg}
+						alt="Wheel"
+						className={`absolute left-[40px] bottom-[-32px] w-[72px] h-[72px] animate-spin-slow z-20${
+							paused ? " paused-spin" : ""
+						}`}
+						style={{ objectFit: "contain" }}
+						data-wheel
+					/>
+					<img
+						src={wheelImg}
+						alt="Wheel"
+						className={`absolute right-[40px] bottom-[-32px] w-[72px] h-[72px] animate-spin-slow z-20${
+							paused ? " paused-spin" : ""
+						}`}
+						style={{ objectFit: "contain" }}
+						data-wheel
+					/>
+				</div>
+			</div>
+		);
+	});
 
-  return (
-    <div className="relative bg-[#FFFBEA] py-24 overflow-hidden">
-      <h2 className="text-5xl font-bold text-center text-[#4B3F72] mb-20">
-        Meet Our Team
-      </h2>
+	return (
+		<div
+			className="relative w-full overflow-hidden bg-gradient-to-b from-[#ffeb9c] to-white pt-10"
+			style={{ scrollBehavior: "smooth" }}
+		>
+			<h2 className="modak text-5xl md:text-6xl text-[#222] mb-8 text-center w-full">
+				THE TEAM
+			</h2>
+			<div
+				className={`flex w-max animate-scroll${
+					paused ? " paused-scroll" : ""
+				}`}
+				id="cart-scroll"
+				onMouseEnter={() => setPaused(true)}
+				onMouseLeave={() => setPaused(false)}
+			>
+				{allWagons}
+			</div>
 
-      <div className="relative h-[360px] w-full overflow-hidden">
-        <motion.div
-          animate={{ x }}
-          transition={{ ease: "linear", duration: 0 }}
-          style={{ display: "flex", width: "max-content" }}
-          className="absolute gap-16"
-        >
-          {repeatedDepartments.map((department, idx) => (
-            <div
-              key={idx}
-              className="relative bg-[#E2B07F] rounded-[12px] min-w-[350px] h-[250px] px-6 pt-6 pb-12 shadow-lg border-4 border-[#A05A2C] flex flex-col items-center"
-            >
-              {/* Wagon shape */}
-              <div className="absolute -bottom-8 left-6 w-12 h-12 bg-[#A05A2C] rounded-full border-[6px] border-[#703C1C]"></div>
-              <div className="absolute -bottom-8 right-6 w-12 h-12 bg-[#A05A2C] rounded-full border-[6px] border-[#703C1C]"></div>
-
-              <h3 className="text-xl font-semibold text-white mb-4">
-                {department.name}
-              </h3>
-              <div className="flex flex-wrap justify-center gap-6">
-                {department.members.map((member, i) => (
-                  <div key={i} className="w-20 flex flex-col items-center">
-                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-yellow-300">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="text-xs mt-1 text-center font-medium text-white">
-                      {member.name}
-                    </div>
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white mt-1 hover:text-yellow-300"
-                    >
-                      <FaLinkedin />
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    </div>
-  );
+			<style>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+        .paused-scroll {
+          animation-play-state: paused !important;
+        }
+        .animate-spin-slow {
+          animation: spin-reverse 2s linear infinite;
+        }
+        .paused-spin {
+          animation-play-state: paused !important;
+        }
+        @keyframes spin-reverse {
+          100% {
+            transform: rotate(-360deg);
+          }
+        }
+      `}</style>
+			{/* Brown rectangle below carts */}
+			<div
+				className="w-full h-8 bg-[#a9744f] mt-2 rounded-t-sm"
+				style={{
+					zIndex: 0,
+					pointerEvents: "none",
+				}}
+			/>
+		</div>
+	);
 }

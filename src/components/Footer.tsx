@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Footer() {
   return (
     <footer className="w-full bg-gradient-to-t to-[#a9744f] from-[#4c3627] text-white py-6 px-4 flex flex-col items-center">

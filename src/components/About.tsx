@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import coleads from '../assets/coleads.png';
+import coleads from '../assets/Coleads.png';
 import working from '../assets/working.png';
 import workshop from '../assets/workshop.png';
 

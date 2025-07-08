@@ -20,7 +20,7 @@ function Faq() {
               Who can join?
             </AccordionTrigger>
             <AccordionContent className="inter text-[#222] text-lg">
-              Any high school student! You don't need any experience — just an interest in the environment, tech, or trying something new.
+              Any high school student! You don't need any experience just an interest in the environment, tech, or trying something new.
             </AccordionContent>
           </AccordionItem>
 

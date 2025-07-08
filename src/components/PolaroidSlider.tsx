@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import "./about.css"
 import coleads from '../assets/coleads.JPG';
-import working from '../assets/working.JPG';
-import workshop from '../assets/workshop.png';
+import working from '../assets/polariod/working.png';
+import workshop from '../assets/polariod/workshop.png';
 
 const PolaroidSlider = () => {
     const images = [coleads, working, workshop];

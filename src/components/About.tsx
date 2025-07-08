@@ -1,10 +1,16 @@
 import { useState } from 'react';
-import coleads from '../assets/Coleads.png';
-import working from '../assets/working.png';
-import workshop from '../assets/workshop.png';
-
+import coleads from '../assets/polariod/Coleads.png';
+import working from '../assets/polariod/working.png';
+import workshop from '../assets/polariod/workshop.png';
+import portrait from '../assets/polariod/portrait.jpg';
+import portrait2 from '../assets/polariod/portrait2.jpg';
+import presentation from '../assets/polariod/presentation.jpg';
+import working2 from '../assets/polariod/working2.jpg';
+import workshop2 from '../assets/polariod/workshop2.jpg';
+import organizers from '../assets/polariod/organizers.jpg';
+import presentation2 from '../assets/polariod/presentation2.jpg';
 const About = () => {
-  const images = [coleads, working, workshop];
+  const images = [coleads, working, workshop,portrait,portrait2,presentation,working2,workshop2,organizers,presentation2];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -21,7 +27,7 @@ const About = () => {
         <div id="Left" className="flex-1 min-w-0">
           <div className="modak text-[#333333] text-7xl max-lg:text-center max-[400px]:text-6xl">About Incubator Hacks</div>
           <div className="inter text-[#333333] text-2xl mt-[25px] mb-[75px] max-w-[650px] max-lg:max-w-full max-lg:text-center max-lg:mx-auto ">
-Incubator Hacks is a climate-focused hackathon for high school students — and no, you don’t need to be a cracked coder to join.We started this event in Kitchener-Waterloo to bring something new to the local community: a space where students could tackle real environmental problems, supported by people who care about the future of our planet.
+Incubator Hacks is a climate-focused hackathon for high school students and no, you don’t need to be a cracked coder to join.We started this event in Kitchener-Waterloo to bring something new to the local community: a space where students could tackle real environmental problems, supported by people who care about the future of our planet.
 
           </div>
         </div>

@@ -1,7 +1,18 @@
 import { useEffect, useState } from "react";
 import cartImg from "../assets/cart.png";
 import wheelImg from "../assets/wheel.png";
+import Aanya from "../assets/portraits/Aanya.png";
+import Alan from "../assets/portraits/Alan.jpg";
+import Ayah from "../assets/portraits/Ayah.jpeg";
+import Charmaine from "../assets/portraits/Charmaine.jpg";
+import Daniel from "../assets/portraits/Daniel.jpg";
+import Jaitra from "../assets/portraits/Jaitra.jpg";
+import Luning from "../assets/portraits/luning.jpg";
+import Nereyal from "../assets/portraits/nereyal.jpeg";
+import Sathvik from "../assets/portraits/Sathvik.png";
 import Sharon from "../assets/portraits/sharon.jpg";
+import Shreemayi from "../assets/portraits/Shreemayi.jpg";
+import Sophia from "../assets/portraits/Sophia.png";
 
 interface TeamMember {
   name: string;
@@ -11,21 +22,34 @@ interface TeamMember {
 }
 
 const teamMembers: TeamMember[] = [
-  { name: "Sharon", role: "Web Developer", img: Sharon, linkedin: "" },
-  { name: "Sathvik", role: "Web Developer", img: "/pfp2.jpg", linkedin: "https://www.linkedin.com/in/sathvik" },
-  { name: "Prasun", role: "Web Developer", img: "/pfp3.jpg", linkedin: "https://www.linkedin.com/in/prasun" },
-  { name: "Dana", role: "QA Engineer", img: "/pfp4.jpg", linkedin: "https://www.linkedin.com/in/dana" },
-  { name: "Eli", role: "DevOps", img: "/pfp5.jpg", linkedin: "https://www.linkedin.com/in/eli" },
-  { name: "Fiona", role: "UX Researcher", img: "/pfp6.jpg", linkedin: "https://www.linkedin.com/in/fiona" },
-  { name: "George", role: "Scrum Master", img: "/pfp7.jpg", linkedin: "https://www.linkedin.com/in/george" },
-  { name: "Hannah", role: "Engineer", img: "/pfp8.jpg", linkedin: "https://www.linkedin.com/in/hannah" },
-  { name: "Ian", role: "Analyst", img: "/pfp9.jpg", linkedin: "https://www.linkedin.com/in/ian" },
-  { name: "Jill", role: "Content Strategist", img: "/pfp10.jpg", linkedin: "https://www.linkedin.com/in/jill" },
-  // Add more members up to 18 as needed
+  // Co-leads
+  { name: "Shreemayi Kurup", role: "Co-lead", img: Shreemayi, linkedin: "https://www.linkedin.com/in/shreemayi-kurup-50b890210" },
+
+  // Website Team
+  // { name: "Prasun Sharma", role: "Website Lead", img: "", linkedin: "https://www.linkedin.com/in/prasun-sharma-98a4a32b2/" },
+  { name: "Sathvik Haridasu", role: "Website", img: Sathvik, linkedin: "https://www.linkedin.com/in/sathvik-haridasu/" },
+  { name: "Sharon Basovich", role: "Website", img: Sharon, linkedin: "https://www.linkedin.com/in/sharon-basovich" },
+
+  // Logistics Team
+  { name: "Luning Wang", role: "Logistics Lead", img: Luning, linkedin: "https://www.linkedin.com/in/luning-wang~" },
+  { name: "Daniel Xu", role: "Logistics", img: Daniel, linkedin: "https://www.linkedin.com/in/daniel-xu-876272368/" },
+  // { name: "Yuvaansh Kapila", role: "Logistics", img: "", linkedin: "https://www.linkedin.com/in/yuvaansh-kapila-3b4bab364" },
+  { name: "Ayah Elhedhli", role: "Logistics", img: Ayah, linkedin: "" },
+
+  // Finance Team
+  { name: "Nereyal Jeyakumar", role: "Finance Lead", img: Nereyal, linkedin: "https://ca.linkedin.com/in/nereyal-jeyakumar-8ab86931a" },
+  { name: "Jaitra Bhatt", role: "Finance", img: Jaitra, linkedin: "https://docs.google.com/document/d/1w0SbDl-k7kOLoUUBUNR8OUf6ijcPJ-cxbPODvJYxv4k/edit?tab=t.0" },
+  { name: "Alan Liu", role: "Finance", img: Alan, linkedin: "http://www.tcal.xyz" },
+  // { name: "Elizabeth Liu", role: "Finance", img: "", linkedin: "https://www.linkedin.com/in/elizabeth-liu-951314366" },
+
+  // Marketing Team
+  { name: "Charmaine Chan", role: "Marketing Lead", img: Charmaine, linkedin: "" },
+  { name: "Sophia Cui", role: "Marketing", img: Sophia, linkedin: "" },
+  { name: "Aanya Rooprai", role: "Marketing", img: Aanya, linkedin: "" },
 ];
 
-const WAGON_WIDTH = 260;
-const NUM_CARTS = 6; // Fixed number of carts
+
+const NUM_CARTS = 4; // Fixed number of carts
 const MEMBERS_PER_CART = 3;
 
 const MeetOurTeam: React.FC = () => {

@@ -1,26 +1,10 @@
 import logo from '../assets/IncubatorHacksLogo.svg';
 import { useState } from 'react';
 import { motion, MotionConfig } from 'framer-motion';
-
+import { HashLink } from "react-router-hash-link";
 export default function Nav() {
   const [active, setActive] = useState(false);
 
-  // Smooth scroll handler for nav links
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
-    if (id === 'contact') {
-      alert('Coming soon!');
-      setActive(false);
-      return;
-    }
-    const el = document.getElementById(id);
-    if (el) {
-      const yOffset = -80; // adjust for sticky nav height
-      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-      setActive(false); // close mobile menu if open
-    }
-  };
 
   return (
     <div className="sticky top-0 z-50">
@@ -32,17 +16,16 @@ export default function Nav() {
 
         {/* Desktop Nav */}
         <div id="rightside" className="hidden lg:flex gap-[12px] inter">
-          <a href="#hero" onClick={e => handleNavClick(e, 'hero')} className="text-[16px] lg:text-[20px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] ">Home</a>
-          <a href="#about" onClick={e => handleNavClick(e, 'about')} className="text-[16px] lg:text-[20px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] ">About</a>
-          <a href="#sponsor" onClick={e => handleNavClick(e, 'sponsor')} className="text-[16px] lg:text-[20px] text-[#f9c74f] p-[10px] hover:text-[#FFB300]">Sponsors</a>
-          <a href="#faq" onClick={e => handleNavClick(e, 'faq')} className="text-[16px] lg:text-[20px] text-[#f9c74f] p-[10px] hover:text-[#FFB300]">FAQ</a>
-          <a href="#team" onClick={e => handleNavClick(e, 'team')} className="text-[16px] lg:text-[20px] text-[#f9c74f] p-[10px] hover:text-[#FFB300]">The Team</a>
+          <HashLink smooth to="/#hero" className="text-[16px] lg:text-[20px] text-[#f9c74f] p-[10px] hover:text-[#FFB300]">Home</HashLink>
+          <HashLink smooth to="/#about" className="text-[16px] lg:text-[20px] text-[#f9c74f] p-[10px] hover:text-[#FFB300]">About</HashLink>
+          <HashLink smooth to="/#sponsor" className="text-[16px] lg:text-[20px] text-[#f9c74f] p-[10px] hover:text-[#FFB300]">Sponsors</HashLink>
+          <HashLink smooth to="/#faq" className="text-[16px] lg:text-[20px] text-[#f9c74f] p-[10px] hover:text-[#FFB300]">FAQ</HashLink>
+          <HashLink smooth to="/#team" className="text-[16px] lg:text-[20px] text-[#f9c74f] p-[10px] hover:text-[#FFB300]">The Team</HashLink>
           <div className="relative group">
-            <a href="#contact" onClick={e => e.preventDefault()} className="special-button">Apply
-              <span className="absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-2 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-lg">Coming soon!</span>
-            </a>
+            <HashLink smooth to="/signin" className="special-button cursor-not-allowed">Dashbord</HashLink>
           </div>
         </div>
+
 
         {/* Mobile Hamburger */}
         <MotionConfig transition={{ duration: 0.2 }}>
@@ -103,17 +86,18 @@ export default function Nav() {
           style={{ y: '-100%' }}
         >
           <div className="flex flex-col items-center gap-4 inter">
-            <a href="#hero" onClick={e => handleNavClick(e, 'hero')} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold ">Home</a>
-            <a href="#about" onClick={e => handleNavClick(e, 'about')} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold ">About</a>
-            <a href="#sponsor" onClick={e => handleNavClick(e, 'sponsor')} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold">Sponsors</a>
-            <a href="#faq" onClick={e => handleNavClick(e, 'faq')} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold">FAQ</a>
-            <a href="#team" onClick={e => handleNavClick(e, 'team')} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold">The Team</a>
-            <div className="relative group w-full flex justify-center">
-              <a href="#contact" onClick={e => e.preventDefault()} className="special-button w-full text-center">Apply
-                <span className="absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-2 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-lg">Coming soon!</span>
-              </a>
+              <HashLink smooth to="/#hero" onClick={() => setActive(false)} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold">Home</HashLink>
+              <HashLink smooth to="/#about" onClick={() => setActive(false)} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold">About</HashLink>
+              <HashLink smooth to="/#sponsor" onClick={() => setActive(false)} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold">Sponsors</HashLink>
+              <HashLink smooth to="/#faq" onClick={() => setActive(false)} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold">FAQ</HashLink>
+              <HashLink smooth to="/#team" onClick={() => setActive(false)} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold">The Team</HashLink>
+              <div className="relative group w-full flex justify-center">
+                <span className="special-button w-full text-center cursor-not-allowed">Apply
+                  <span className="absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-2 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-lg">Coming soon!</span>
+                </span>
+              </div>
             </div>
-          </div>
+
         </motion.div>
       </MotionConfig>
     </div>

@@ -6,7 +6,8 @@ import youth from "../assets/sponsers/Youth.jpg";
 import oceanwise from "../assets/sponsers/Ocean.png";
 import divider from '../assets/divider.png';
 import boat from '../assets/boat.png';
-
+import cleanshot from '../assets/cleanshot.png';
+import codecrafters from '../assets/codecrafters.png';
 
 const Sponsor: React.FC = () => {
   return (
@@ -26,6 +27,12 @@ const Sponsor: React.FC = () => {
         </a>
         <a className="sponsor-logo" href="https://ocean.org" target="_blank" rel="noopener noreferrer">
           <img src={oceanwise} alt="Ocean Wise Logo" style={{ width: '350px', height: '200px' }} />
+        </a>
+        <a className="sponsor-logo" href="https://cleanshot.com" target="_blank" rel="noopener noreferrer">
+          <img src={cleanshot} alt="CleanShot Logo" style={{ width: '350px', height: '200px' }} />
+        </a>
+        <a className="sponsor-logo" href="https://codecrafters.io" target="_blank" rel="noopener noreferrer">
+          <img src={codecrafters} alt="CodeCrafters Logo" style={{ width: '350px', height: '200px' }} />
         </a>
       </div>
     </section>

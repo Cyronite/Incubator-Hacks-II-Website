@@ -23,7 +23,8 @@ const About = () => {
   };
 
   return (
-    <section className="px-5 py-16 md:px-[5%] md:py-32 max-w-[1600px] mx-auto">
+    <section className="px-5 py-16 md:px-[5%] md:py-52
+     max-w-[1600px] mx-auto">
       <div className="flex flex-col lg:flex-row gap-12 items-center">
         {/* Text Content */}
         <div className="flex-1 space-y-6 lg:space-y-8">

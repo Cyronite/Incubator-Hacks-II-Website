@@ -22,7 +22,7 @@ export default function Nav() {
           <HashLink smooth to="/#faq" className="text-[16px] lg:text-[20px] text-[#f9c74f] p-[10px] hover:text-[#FFB300]">FAQ</HashLink>
           <HashLink smooth to="/#team" className="text-[16px] lg:text-[20px] text-[#f9c74f] p-[10px] hover:text-[#FFB300]">The Team</HashLink>
           <div className="relative group">
-            <HashLink smooth to="/signin" className="special-button cursor-not-allowed">Dashbord</HashLink>
+            <HashLink smooth to="/signin" className="special-button cursor-not-allowed">Dashboard</HashLink>
           </div>
         </div>
 
@@ -91,10 +91,8 @@ export default function Nav() {
               <HashLink smooth to="/#sponsor" onClick={() => setActive(false)} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold">Sponsors</HashLink>
               <HashLink smooth to="/#faq" onClick={() => setActive(false)} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold">FAQ</HashLink>
               <HashLink smooth to="/#team" onClick={() => setActive(false)} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold">The Team</HashLink>
-              <div className="relative group w-full flex justify-center">
-                <span className="special-button w-full text-center cursor-not-allowed">Dashbord
-                  <span className="absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-2 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-lg">Coming soon!</span>
-                </span>
+              <div className="relative group">
+                <HashLink smooth to="/signin" className="special-button cursor-not-allowed" onClick={()=>setActive(false)}>Dashboard</HashLink>
               </div>
             </div>
 

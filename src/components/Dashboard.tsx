@@ -55,7 +55,7 @@ useEffect(() => {
     onClick={() => navigate("/form")}
     className="py-2 px-4 bg-yellow-400 hover:bg-yellow-500 text-white rounded-xl shadow"
   >
-    Submit Application
+    Apply
   </button>
 )}
         
@@ -65,21 +65,6 @@ useEffect(() => {
     
 
       {/* Hacker Package */}
-      <div className="bg-blue-100 shadow-lg rounded-2xl p-8 mb-6 w-full max-w-xl flex flex-col items-center">
-        <h2 className="text-3xl font-bold mb-4">Hacker Package</h2>
-        <p className="text-gray-700 mb-4 text-center">
-          Download our exclusive Hacker Package PDF with tools, tips, and resources.
-        </p>
-        <a
-          
-          className="py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white rounded-xl shadow-lg text-lg font-semibold relative inline-block group"
-        >
-          Download Now
-          <span className="absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-2 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-lg">
-            Coming soon!
-          </span>
-        </a>
-      </div>
 
       {/* Sign Out */}
       <button

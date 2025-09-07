@@ -27,7 +27,7 @@ export default function Hero() {
                 <div id="bottom" className="flex gap-10 mt-28 max-[1430px]:mt-40 absolute max-[1300px]:hidden">
                     <div id="box1" className="p-5 w-60 bg-[#ffffff3e] rounded-[20px] backdrop-blur-[3px] shadow-lg border-2 border-[white]">
                          <img src={blueCloud} alt="blue cloud" className="w-[50px]" />
-                        <div className=" pt-[15px] inter text-[#333333] text-lg">We believe the best ideas serve the planet. That’s why every project at Incubator Hacks challenges you to think about sustainability, climate justice, or conservation and how tech can help.</div>
+                        <div className=" pt-[15px] inter text-[#333333] text-lg">We believe the best ideas serve the planet. That’s why our theme this year is centered on climate justice and ocean sustainability.</div>
                     </div>
                     <div id="box2" className=" -mt-10 mb-10 p-5 w-60 bg-[#ffffff3e] rounded-[20px] backdrop-blur-[3px] shadow-lg border-2 border-[white]">
                         <img src={YellowHammer} alt="blue cloud" className="w-[50px]" />
@@ -36,7 +36,7 @@ export default function Hero() {
                     </div>
                     <div id="box3" className="p-5 w-60 bg-[#ffffff3e] rounded-[20px] backdrop-blur-[3px] shadow-lg border-2 border-[white]">
                         <img src={GreenStar} alt="blue cloud" className="w-[50px]" />
-                        <div className=" pt-[15px] inter text-[#333333] text-lg ">The most promising ideas shouldn’t end after the final pitch. Winning teams get matched with mentors to help them keep building after the hackathon wraps up.</div>
+                        <div className=" pt-[15px] inter text-[#333333] text-lg "> It’s more than just coding. We place a strong focus on ideation and strategic thinking, with the goal of creating solutions that address real issues and bring valuable impact.</div>
                     </div>
                 </div>
             </div>

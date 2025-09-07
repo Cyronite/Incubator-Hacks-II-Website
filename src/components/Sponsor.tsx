@@ -6,7 +6,14 @@ import youth from "../assets/sponsers/Youth.jpg";
 import oceanwise from "../assets/sponsers/Ocean.png";
 import divider from '../assets/divider.png';
 import boat from '../assets/boat.png';
-
+import cleanshot from '../assets/sponsers/cleanshot.png';
+import codecrafters from '../assets/sponsers/codecrafters.png';
+import NordVPN from '../assets/sponsers/NordVPN.png';
+import PCBWAY from '../assets/sponsers/PCBWAY.png';
+import unitedcollege from '../assets/sponsers/unitedcollege.png';
+import greenhouse from '../assets/sponsers/greenhouse.png';  
+import flatlogic from '../assets/sponsers/flatlogic.png';
+import projectastreaus from '../assets/sponsers/projectastreaus.png';
 
 const Sponsor: React.FC = () => {
   return (
@@ -18,14 +25,44 @@ const Sponsor: React.FC = () => {
     <section className="sponsor-section">
       <h2 className="modak text-5xl md:text-6xl text-[#222] mb-8 text-center w-full">OUR SPONSORS</h2>
       <div className="sponsor-logos">
-        <a className="sponsor-logo" href="https://youthcreativityfund.ca" target="_blank" rel="noopener noreferrer">
-          <img src={youth} alt="Youth Creativity Fund Logo" style={{ width: '350px', height: '200px' }} />
-        </a>
+
         <a className="sponsor-logo" href="https://www.kitchener.ca/en/taxes-utilities-and-finance/bloomberg-youth-climate-action-fund.aspx" target="_blank" rel="noopener noreferrer">
           <img src={city} alt="Kitchener Logo" style={{ width: '350px', height: '200px' }} />
         </a>
         <a className="sponsor-logo" href="https://ocean.org" target="_blank" rel="noopener noreferrer">
           <img src={oceanwise} alt="Ocean Wise Logo" style={{ width: '350px', height: '200px' }} />
+        </a>
+        <a className="sponsor-logo" href="https://youthcreativityfund.ca" target="_blank" rel="noopener noreferrer">
+          <img src={youth} alt="Youth Creativity Fund Logo" style={{ width: '350px', height: '200px' }} />
+        </a>
+        <a className="sponsor-logo" href="https://flatlogic.com" target="_blank" rel="noopener noreferrer">
+          <img src={flatlogic} alt="Flatlogic Logo" style={{ width: '350px', height: '200px' }} />
+        </a>
+        <a className="sponsor-logo" href="https://cleanshot.com" target="_blank" rel="noopener noreferrer">
+          <img src={cleanshot} alt="CleanShot Logo" style={{ width: '350px', height: '200px' }} />
+        </a>
+        <a className="sponsor-logo" href="https://codecrafters.io" target="_blank" rel="noopener noreferrer">
+          <img src={codecrafters} alt="CodeCrafters Logo" style={{ width: '350px', height: '200px' }} />
+        </a>
+        <a className="sponsor-logo" href="https://nordvpn.com" target="_blank" rel="noopener noreferrer">
+          <img src={NordVPN} alt="NordVPN Logo" style={{ width: '350px', height: '200px' }} />
+        </a>
+        <a className="sponsor-logo" href="https://www.pcbway.com" target="_blank" rel="noopener noreferrer">
+          <img src={PCBWAY} alt="PCBWAY Logo" style={{ width: '350px', height: '200px' }} />
+        </a>
+      </div>
+    </section>
+    <section className="sponsor-section">
+      <h2 className="modak text-5xl md:text-6xl text-[#222] mb-8 text-center w-full">OUR PARTNERS</h2>
+      <div className="sponsor-logos">
+        <a className="sponsor-logo" href="https://uwaterloo.ca/united-college" target="_blank" rel="noopener noreferrer">
+          <img src={unitedcollege} alt="United College Logo" style={{ width: '350px', height: '200px' }} />
+        </a>
+        <a className="sponsor-logo" href="https://uwaterloo.ca/united-college/greenhouse" target="_blank" rel="noopener noreferrer">
+          <img src={greenhouse} alt="Greenhouse Logo" style={{ width: '450px', height: '300px' }} />
+        </a>
+        <a className="sponsor-logo" href="https://projectastraeus.org" target="_blank" rel="noopener noreferrer">
+          <img src={projectastreaus} alt="Project Astreaus Logo" style={{ width: '450px', height: '300px' }} />
         </a>
       </div>
     </section>

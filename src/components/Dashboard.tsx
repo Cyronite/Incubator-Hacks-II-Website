@@ -71,12 +71,13 @@ useEffect(() => {
           Download our exclusive Hacker Package PDF with tools, tips, and resources.
         </p>
         <a
-          href="/hacker-package.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white rounded-xl shadow-lg text-lg font-semibold"
+          
+          className="py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white rounded-xl shadow-lg text-lg font-semibold relative inline-block group"
         >
           Download Now
+          <span className="absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-2 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-lg">
+            Coming soon!
+          </span>
         </a>
       </div>
 

@@ -2,7 +2,7 @@ import blueCloud from "../assets/BlueCloud.png";
 import YellowHammer from "../assets/YellowHammer.png";
 import GreenStar from "../assets/GreenStar.png";
 import HeroImage from "../assets/HeroImage.png";
-
+import { HashLink } from "react-router-hash-link";
 
 export default function Hero() {
 
@@ -15,14 +15,13 @@ export default function Hero() {
                     <div className="inter text-[#333333] text-2xl mb-[20px] max-w-[650px] max-lg:text-center max-lg:w-full max-lg:mx-auto">A beginner-focused hackathon hosted in Kitchener-Waterloo. It’s a space for high school students to explore new technologies, team up, and create meaningful projects over the weekend.
 </div>
                     <div className="max-lg:mx-auto max-lg:text-center">
-                        <a
-          href="#apply"
-          onClick={e => e.preventDefault()}
-          className="bg-[#333333] text-[30px] no-underline w-[180px] px-[30px] py-[10px] inter border-[#333333] text-[white]  rounded-full border-4 text-center relative group"
-        >
-          Register Now
-          <span className="absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-2 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-lg">Coming soon!</span>
-        </a>
+                        <HashLink
+                        smooth
+                        to="/signin"
+                        className="bg-[#333333] text-[30px] no-underline w-[180px] px-[30px] py-[10px] inter border-[#333333] text-[white]  rounded-full border-4 text-center relative group"
+                        >
+                        Apply Now
+                        </HashLink>
                     </div>
                 </div>
                 <div id="bottom" className="flex gap-10 mt-28 max-[1430px]:mt-40 absolute max-[1300px]:hidden">

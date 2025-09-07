@@ -8,86 +8,88 @@ export default function AuthCallback() {
   const [error, setError] = useState<string | null>(null);
   const once = useRef(false);
 
-  useEffect(() => {
-    if (once.current) return;
-    once.current = true;
-
-    (async () => {
+useEffect(() => {
+  if (once.current) return;
+  once.current = true;
+  (async () => {
+    try {
       setStatus("Verifying");
 
-      // 1) Grab session immediately (don’t wait for onAuthStateChange)
-      const { data: { session }, error: sessionErr } = await supabase.auth.getSession();
+      // PKCE exchange if ?code=...
+      await supabase.auth.exchangeCodeForSession(window.location.href).catch(() => {});
 
-      if (sessionErr) {
-        console.error(sessionErr);
-        setError("Could not verify session.");
-        setStatus("Error");
-        // fail fast to sign-in
-        navigate("/signin", { replace: true });
+      // If implicit flow dumped us on / with #access_token, forward it:
+      if (window.location.hash.startsWith("#access_token")) {
+        window.location.replace(`/auth/callback${window.location.hash}`);
         return;
       }
 
+      // Ensure session exists (with a short onAuthStateChange fallback)
+      let { data: { session } } = await supabase.auth.getSession();
       if (!session) {
+        const got = await new Promise((resolve) => {
+          const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => {
+            if (s) { resolve(s); sub.subscription.unsubscribe(); }
+          });
+          setTimeout(async () => {
+            const { data: { session: s2 } } = await supabase.auth.getSession();
+            resolve(s2 ?? null);
+            sub.subscription.unsubscribe();
+          }, 800);
+        });
+        session = got as any;
+      }
+      if (!session) {
+        setStatus("Error");
+        setError("Could not verify session.");
         navigate("/signin", { replace: true });
         return;
       }
 
-      const user = session.user;
-
-      // 2) Start provider check + profile upsert but DO NOT block UI
-      //    a) We'll race this against a 300ms timer for instant redirect
+      // Your duplicate-provider + upsert logic (wrapped safely)
       const providerCheck = (async () => {
-        const currentProvider = (user.app_metadata as any)?.provider as string | undefined;
-        const identities = (user as any)?.identities as Array<{ provider?: string }> | undefined;
-        const hasEmailIdentity = Array.isArray(identities) && identities.some((i) => i?.provider === "email");
+        try {
+          const user = session!.user;
+          const currentProvider = (user.app_metadata as any)?.provider as string | undefined;
+          const identities = (user as any)?.identities as Array<{ provider?: string }> | undefined;
+          const hasEmailIdentity = Array.isArray(identities) && identities.some(i => i?.provider === "email");
 
-        // If user is coming via an OAuth provider (e.g., Google) but already has an email identity,
-        // treat this as a duplicate-provider sign-in and block it.
-        if (currentProvider && currentProvider !== "email" && hasEmailIdentity) {
-          await supabase.auth.signOut();
-          navigate("/signin?error=duplicate&via=oauth", { replace: true });
-          return { ok: false as const, reason: "duplicate_provider" as const };
+          if (currentProvider && currentProvider !== "email" && hasEmailIdentity) {
+            await supabase.auth.signOut();
+            navigate("/signin?error=duplicate&via=oauth", { replace: true });
+            return { ok: false as const, reason: "duplicate_provider" as const };
+          }
+
+          const { error: upsertErr } = await supabase.from("profiles").upsert({
+            id: user.id, email: user.email, provider: currentProvider ?? "email",
+          });
+          if (upsertErr) console.error(upsertErr);
+          return { ok: true as const, reason: "done" as const };
+        } catch (e) {
+          console.error("providerCheck failed:", e);
+          return { ok: true as const, reason: "provider_check_failed" as const };
         }
-
-        // Upsert profile (fire-and-forget-ish)
-        const { error: upsertErr } = await supabase.from("profiles").upsert({
-          id: user.id,
-          email: user.email,
-          provider: currentProvider ?? "email",
-        });
-        if (upsertErr) {
-          console.error(upsertErr);
-          // Not fatal for navigation
-          return { ok: true as const, reason: "upsert_error_nonfatal" as const };
-        }
-
-        return { ok: true as const, reason: "done" as const };
       })();
 
-      const timer = new Promise<"timeout">((resolve) => setTimeout(() => resolve("timeout"), 300));
-
-      // 3) Race: if providerCheck wins quickly, great; otherwise navigate anyway.
+      const timer = new Promise<"timeout">(r => setTimeout(() => r("timeout"), 300));
       const result = await Promise.race([providerCheck, timer]);
+      if (result !== "timeout" && typeof result === "object" && "ok" in result && !result.ok) return;
 
-      // If the provider check already determined a duplicate (and redirected),
-      // do NOT override that by navigating to the dashboard.
-      if (result !== "timeout" && typeof result === "object" && result && "ok" in result) {
-        const r = result as { ok: boolean; reason: string };
-        if (!r.ok && r.reason === "duplicate_provider") {
-          return; // providerCheck already signed out and redirected to /signin
-        }
-      }
+      // Clean query/hash noise
+      try { window.history.replaceState({}, document.title, "/auth/callback"); } catch {}
 
       setStatus("Redirecting");
       navigate("/dashboard", { replace: true });
+      if (result === "timeout") providerCheck.catch(console.error);
+    } catch (e) {
+      console.error(e);
+      setStatus("Error");
+      setError("Unexpected error during authentication.");
+      navigate("/signin", { replace: true });
+    }
+  })();
+}, [navigate]);
 
-      // 4) If the timer won, let the check finish in the background.
-      //    When it finishes and finds duplicate, it will sign out + redirect.
-      if (result === "timeout") {
-        providerCheck.catch((e) => console.error("Provider check later failed:", e));
-      }
-    })();
-  }, [navigate]);
 
   // Minimal in-between page (very short-lived)
   return (

@@ -96,7 +96,8 @@ const MeetOurTeam: FC = () => {
     return (
       <div
         key={i}
-        className="relative flex flex-col items-center w-[340px] h-[200px] justify-end mx-8 md:w-[425px] md:h-[250px] md:mx-10"
+        aria-hidden={i >= carts.length}
+        className="relative shrink-0 flex flex-col items-center w-[340px] h-[200px] justify-end mx-8 md:w-[425px] md:h-[250px] md:mx-10"
       >
         <div className={`flex w-full mb-[-36px] md:mb-[-45px] ${isCoLeads ? "justify-center gap-6 px-0 md:gap-[30px]" : "justify-between px-10 md:px-[50px]"}`}>
           {group.map((member, j) => (
@@ -153,8 +154,8 @@ const MeetOurTeam: FC = () => {
         THE TEAM
       </h2>
       <div
-        className={`flex w-max animate-scroll ${paused ? 'paused-scroll' : ''}`}
-        style={{ minWidth: '100%', width: 'max-content' }}
+        className={`flex flex-nowrap w-max animate-scroll ${paused ? 'paused-scroll' : ''}`}
+        style={{ minWidth: '100%', width: 'max-content', willChange: 'transform' }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
@@ -163,8 +164,8 @@ const MeetOurTeam: FC = () => {
 
       <style>{`
         @keyframes scroll {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
+          0% { transform: translate3d(0%, 0, 0); }
+          100% { transform: translate3d(-50%, 0, 0); }
         }
         .animate-scroll {
           animation: scroll 30s linear infinite;

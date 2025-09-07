@@ -92,7 +92,7 @@ export default function Nav() {
               <HashLink smooth to="/#faq" onClick={() => setActive(false)} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold">FAQ</HashLink>
               <HashLink smooth to="/#team" onClick={() => setActive(false)} className="text-[16px] text-[#f9c74f] p-[10px] hover:text-[#FFB300] font-bold">The Team</HashLink>
               <div className="relative group w-full flex justify-center">
-                <span className="special-button w-full text-center cursor-not-allowed">Apply
+                <span className="special-button w-full text-center cursor-not-allowed">Dashbord
                   <span className="absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-2 rounded bg-black text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-lg">Coming soon!</span>
                 </span>
               </div>

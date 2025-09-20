@@ -26,7 +26,7 @@ import wolfram from '../assets/sponsers/wolfram-corporate-logo-horz-lg.png';
 import xyz from '../assets/sponsers/xyz-logo-color.png';
 import aops from '../assets/sponsers/aops.png';
 import FBB from '../assets/sponsers/FBB.png';
-import yc from '../assets/sponsers/yc.png';
+import yc from '../assets/sponsers/YC.png';
 
 const Sponsor: React.FC = () => {
   return (

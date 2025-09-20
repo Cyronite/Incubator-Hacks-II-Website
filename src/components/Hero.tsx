@@ -12,10 +12,8 @@ export default function Hero() {
             <div id="Left" className=" mt-10 lg:mt-52">
                 <div id="top">
                     <div className="modak text-[#333333] text-7xl max-lg:text-center max-[400px]:text-6xl">Incubator Hacks</div>
-                    <div className="inter text-[#333333] text-2xl mb-[20px] max-w-[650px] max-lg:text-center max-lg:w-full max-lg:mx-auto">Sustainability, innovation, and collaboration! 
-
-📍October 4 (in-person at united college, University of Waterloo) and October 5th (online)
-                    </div>
+                    <div className="inter text-[#333333] text-2xl mb-[20px] max-w-[650px] max-lg:text-center max-lg:w-full max-lg:mx-auto">Sustainability, Innovation, and Collaboration! </div>
+                    <div className="inter text-[#333333] text-2xl mb-[20px] max-w-[650px] max-lg:text-center max-lg:w-full max-lg:mx-auto">📍October 4 (in-person at United College, University of Waterloo) and October 5th (Online)</div>
                     <div className="max-lg:mx-auto max-lg:text-center">
                         <HashLink
                         smooth

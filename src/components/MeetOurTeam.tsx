@@ -44,8 +44,8 @@ const teamMembers: TeamMember[] = [
   { name: "Alan Liu", role: "Finance", img: Alan, linkedin: "http://www.tcal.xyz" },
 
   // Marketing Team
-  { name: "Charmaine Chan", role: "Marketing Co-Lead", img: Charmaine, linkedin: "" },
-  { name: "Sophia Cui", role: "Marketing Co-Lead", img: Sophia, linkedin: "" },
+  { name: "Charmaine Chan", role: "Marketing Co-lead", img: Charmaine, linkedin: "" },
+  { name: "Sophia Cui", role: "Marketing Co-lead", img: Sophia, linkedin: "" },
   { name: "Aanya Rooprai", role: "Marketing", img: Aanya, linkedin: "" },
 ];
 
@@ -68,7 +68,12 @@ const MeetOurTeam: FC = () => {
     if (coLeads.length > 0) carts.push(coLeads.slice(0, 2));
 
     // Helper to include both department members and leads
-    const dept = (name: string) => teamMembers.filter(m => m.role === name || m.role === `${name} Lead`);
+    const dept = (name: string) =>
+      teamMembers.filter((m) => {
+        const role = m.role.toLowerCase();
+        const base = name.toLowerCase();
+        return role === base || role === `${base} lead` || role === `${base} co-lead`;
+      });
 
     const departments = ["Website", "Logistics", "Finance", "Marketing"] as const;
     for (const d of departments) {

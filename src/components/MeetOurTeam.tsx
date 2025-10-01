@@ -44,8 +44,8 @@ const teamMembers: TeamMember[] = [
   { name: "Alan Liu", role: "Finance", img: Alan, linkedin: "http://www.tcal.xyz" },
 
   // Marketing Team
-  { name: "Charmaine Chan", role: "Marketing Lead", img: Charmaine, linkedin: "" },
-  { name: "Sophia Cui", role: "Marketing", img: Sophia, linkedin: "" },
+  { name: "Charmaine Chan", role: "Marketing Co-Lead", img: Charmaine, linkedin: "" },
+  { name: "Sophia Cui", role: "Marketing Co-Lead", img: Sophia, linkedin: "" },
   { name: "Aanya Rooprai", role: "Marketing", img: Aanya, linkedin: "" },
 ];
 

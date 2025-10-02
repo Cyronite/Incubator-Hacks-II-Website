@@ -49,71 +49,102 @@ const Sponsor: React.FC = () => {
         </a>
       </div>
     </section>
-    <section className="sponsor-section">
+<section className="sponsor-section">
   <h2 className="modak text-5xl md:text-6xl text-[#222] mb-8 text-center w-full">OUR SPONSORS</h2>
   <div className="sponsor-logos">
-    <a className="sponsor-logo" href="https://www.artofproblemsolving.com" target="_blank" rel="noopener noreferrer">
-      <img src={aops} alt="AoPS Logo" style={{ width: '350px', height: '200px' }} />
-    </a>
-    <a className="sponsor-logo" href="https://balsamiq.com/" target="_blank" rel="noopener noreferrer">
-      <img src={balsamiq} alt="balsamiq" style={{ width: '350px', height: '200px' }} />
-    </a>
-    <a className="sponsor-logo" href="https://brilliant.org" target="_blank" rel="noopener noreferrer">
-      <img src={brilliant} alt="Brilliant Logo" style={{ width: '350px', height: '200px' }} />
-    </a>
-    <a className="sponsor-logo" href="https://cleanshot.com" target="_blank" rel="noopener noreferrer">
-      <img src={cleanshot} alt="CleanShot Logo" style={{ width: '350px', height: '200px' }} />
-    </a>
-    <a className="sponsor-logo" href="https://codecrafters.io" target="_blank" rel="noopener noreferrer">
-      <img src={codecrafters} alt="CodeCrafters Logo" style={{ width: '350px', height: '200px' }} />
-    </a>
-    <a className="sponsor-logo" href="https://www.fatbastardburrito.ca" target="_blank" rel="noopener noreferrer">
-      <img src={FBB} alt="Fat Bastard burrito" style={{ width: '350px', height: '200px' }} />
-    </a>
-    <a className="sponsor-logo" href="https://flatlogic.com" target="_blank" rel="noopener noreferrer">
-      <img src={flatlogic} alt="Flatlogic Logo" style={{ width: '350px', height: '200px' }} />
-    </a>
-    <a className="sponsor-logo" href="https://incogni.com" target="_blank" rel="noopener noreferrer">
-      <img src={incogni} alt="Incogni Logo" style={{ width: '350px', height: '200px' }} />
-    </a>
-    <a className="sponsor-logo" href="https://www.interviewcake.com" target="_blank" rel="noopener noreferrer">
-      <img src={interviewcake} alt="Interview Cake Logo" style={{ width: '350px', height: '200px' }} />
-    </a>
+    {/* City of Kitchener */}
     <a className="sponsor-logo" href="https://www.kitchener.ca/en/taxes-utilities-and-finance/bloomberg-youth-climate-action-fund.aspx" target="_blank" rel="noopener noreferrer">
       <img src={city} alt="Kitchener Logo" style={{ width: '350px', height: '200px' }} />
     </a>
-    <a className="sponsor-logo" href="https://nexos.ai" target="_blank" rel="noopener noreferrer">
-      <img src={nexos} alt="Nexos Logo" style={{ width: '350px', height: '200px' }} />
+
+    {/* Oceanwise */}
+    <a className="sponsor-logo" href="https://ocean.org" target="_blank" rel="noopener noreferrer">
+      <img src={oceanwise} alt="Ocean Wise Logo" style={{ width: '350px', height: '200px' }} />
+    </a>
+
+    {/* Youth Creativity Fund */}
+    <a className="sponsor-logo" href="https://youthcreativityfund.ca" target="_blank" rel="noopener noreferrer">
+      <img src={youth} alt="Youth Creativity Fund Logo" style={{ width: '350px', height: '200px' }} />
+    </a>
+
+    {/* Youth Culture */}
+    <a className="sponsor-logo" href="https://youthculture.com" target="_blank" rel="noopener noreferrer">
+      <img src={yc} alt="Youth Culture" style={{ width: '350px', height: '200px' }} />
+    </a>
+
+    {/* NordVPN Group (NordVPN, NordPass, NordProtect, Incogni, Saily, Nexos) */}
+    <a className="sponsor-logo" href="https://nordvpn.com" target="_blank" rel="noopener noreferrer">
+      <img src={NordVPN} alt="NordVPN Logo" style={{ width: '350px', height: '200px' }} />
     </a>
     <a className="sponsor-logo" href="https://nordpass.com/" target="_blank" rel="noopener noreferrer">
       <img src={nordpass} alt="NordPass Logo" style={{ width: '350px', height: '200px' }} />
     </a>
-    <a className="sponsor-logo" href="https://nordprotect.com/ " target="_blank" rel="noopener noreferrer">
+    <a className="sponsor-logo" href="https://nordprotect.com/" target="_blank" rel="noopener noreferrer">
       <img src={nordProtect} alt="NordProtect Logo" style={{ width: '350px', height: '200px' }} />
     </a>
-    <a className="sponsor-logo" href="https://nordvpn.com" target="_blank" rel="noopener noreferrer">
-      <img src={NordVPN} alt="NordVPN Logo" style={{ width: '350px', height: '200px' }} />
-    </a>
-    <a className="sponsor-logo" href="https://ocean.org" target="_blank" rel="noopener noreferrer">
-      <img src={oceanwise} alt="Ocean Wise Logo" style={{ width: '350px', height: '200px' }} />
-    </a>
-    <a className="sponsor-logo" href="https://www.pcbway.com" target="_blank" rel="noopener noreferrer">
-      <img src={PCBWAY} alt="PCBWAY Logo" style={{ width: '350px', height: '200px' }} />
+    <a className="sponsor-logo" href="https://incogni.com" target="_blank" rel="noopener noreferrer">
+      <img src={incogni} alt="Incogni Logo" style={{ width: '350px', height: '200px' }} />
     </a>
     <a className="sponsor-logo" href="https://saily.com" target="_blank" rel="noopener noreferrer">
       <img src={saily} alt="Saily Logo" style={{ width: '350px', height: '200px' }} />
     </a>
+    <a className="sponsor-logo" href="https://nexos.ai" target="_blank" rel="noopener noreferrer">
+      <img src={nexos} alt="Nexos Logo" style={{ width: '350px', height: '200px' }} />
+    </a>
+
+    {/* PCBWAY */}
+    <a className="sponsor-logo" href="https://www.pcbway.com" target="_blank" rel="noopener noreferrer">
+      <img src={PCBWAY} alt="PCBWAY Logo" style={{ width: '350px', height: '200px' }} />
+    </a>
+
+    {/* Fat Bastard Burrito */}
+    <a className="sponsor-logo" href="https://www.fatbastardburrito.ca" target="_blank" rel="noopener noreferrer">
+      <img src={FBB} alt="Fat Bastard Burrito" style={{ width: '350px', height: '200px' }} />
+    </a>
+
+    {/* Brilliant */}
+    <a className="sponsor-logo" href="https://brilliant.org" target="_blank" rel="noopener noreferrer">
+      <img src={brilliant} alt="Brilliant Logo" style={{ width: '350px', height: '200px' }} />
+    </a>
+
+    {/* Wolfram */}
     <a className="sponsor-logo" href="https://www.wolfram.com" target="_blank" rel="noopener noreferrer">
       <img src={wolfram} alt="Wolfram Logo" style={{ width: '350px', height: '200px' }} />
     </a>
+
+    {/* Flatlogic */}
+    <a className="sponsor-logo" href="https://flatlogic.com" target="_blank" rel="noopener noreferrer">
+      <img src={flatlogic} alt="Flatlogic Logo" style={{ width: '350px', height: '200px' }} />
+    </a>
+
+    {/* AoPS */}
+    <a className="sponsor-logo" href="https://www.artofproblemsolving.com" target="_blank" rel="noopener noreferrer">
+      <img src={aops} alt="AoPS Logo" style={{ width: '350px', height: '200px' }} />
+    </a>
+
+    {/* CleanShot */}
+    <a className="sponsor-logo" href="https://cleanshot.com" target="_blank" rel="noopener noreferrer">
+      <img src={cleanshot} alt="CleanShot Logo" style={{ width: '350px', height: '200px' }} />
+    </a>
+
+    {/* CodeCrafters */}
+    <a className="sponsor-logo" href="https://codecrafters.io" target="_blank" rel="noopener noreferrer">
+      <img src={codecrafters} alt="CodeCrafters Logo" style={{ width: '350px', height: '200px' }} />
+    </a>
+
+    {/* XYZ */}
     <a className="sponsor-logo" href="https://gen.xyz" target="_blank" rel="noopener noreferrer">
       <img src={xyz} alt="XYZ Logo" style={{ width: '350px', height: '200px' }} />
     </a>
-    <a className="sponsor-logo" href="https://youthcreativityfund.ca" target="_blank" rel="noopener noreferrer">
-      <img src={youth} alt="Youth Creativity Fund Logo" style={{ width: '350px', height: '200px' }} />
+
+    {/* Interview Cake */}
+    <a className="sponsor-logo" href="https://www.interviewcake.com" target="_blank" rel="noopener noreferrer">
+      <img src={interviewcake} alt="Interview Cake Logo" style={{ width: '350px', height: '200px' }} />
     </a>
-    <a className="sponsor-logo" href="https://youthculture.com" target="_blank" rel="noopener noreferrer">
-      <img src={yc} alt="Youth Culture" style={{ width: '350px', height: '200px' }} />
+
+    {/* Balsamiq */}
+    <a className="sponsor-logo" href="https://balsamiq.com/" target="_blank" rel="noopener noreferrer">
+      <img src={balsamiq} alt="Balsamiq Logo" style={{ width: '350px', height: '200px' }} />
     </a>
   </div>
 </section>
